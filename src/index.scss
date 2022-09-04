@@ -1,0 +1,53 @@
+$fontfamily: 'Roboto', sans-serif;
+$mainColor: rgb(255, 255, 255);
+$maxWidthContainer: 1170;
+$maxWidth: 1600;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import './styles/null.scss';
+@import './styles/mixin.scss';
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+body._lock {
+
+		overflow: hidden;
+	
+}
+footer {
+	min-height: 80px;
+	background-image: linear-gradient(to bottom, #2800ff, #7b00b2, #7d0071, #660041, #450022, #48041f, #4b091d, #4d0f1b, #790b22, #a60024, #d30020, #ff0012);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	color: #fff;
+}
+main {
+	flex: 1 1 auto;
+	.container {
+		max-width: 1260px;
+		margin: 0 auto;
+		padding-top: 120px;
+	}
+	h1 {
+		color: red;
+		font-size: 2rem;
+		text-align: center;
+		margin-bottom: 2.2rem;
+	}
+	.page__section {
+		height: 80px;
+		border: 1px solid green;
+		margin-bottom: 2rem;
+		&__1 {
+			background-color: red;
+		}
+		&__2 {
+			background-color: blue;
+		}
+	}
+}
+
