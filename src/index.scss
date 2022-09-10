@@ -12,13 +12,25 @@ $maxWidth: 1600;
 	min-height: 100%;
 }
 body._lock {
-
-		overflow: hidden;
-	
+	overflow: hidden;
 }
 footer {
 	min-height: 80px;
-	background-image: linear-gradient(to bottom, #2800ff, #7b00b2, #7d0071, #660041, #450022, #48041f, #4b091d, #4d0f1b, #790b22, #a60024, #d30020, #ff0012);
+	background-image: linear-gradient(
+		to bottom,
+		#2800ff,
+		#7b00b2,
+		#7d0071,
+		#660041,
+		#450022,
+		#48041f,
+		#4b091d,
+		#4d0f1b,
+		#790b22,
+		#a60024,
+		#d30020,
+		#ff0012
+	);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -30,7 +42,7 @@ main {
 	.container {
 		max-width: 1260px;
 		margin: 0 auto;
-		padding-top: 120px;
+		padding: 120px 20px 0 20px;
 	}
 	h1 {
 		color: red;
@@ -39,7 +51,7 @@ main {
 		margin-bottom: 2.2rem;
 	}
 	.page__section {
-		height: 80px;
+		padding: 2rem;
 		border: 1px solid green;
 		margin-bottom: 2rem;
 		&__1 {
@@ -51,3 +63,57 @@ main {
 	}
 }
 
+.catalogs {
+	h1 {
+		text-align: center;
+		font-size: 2rem;
+	}
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -0.5rem;
+	}
+	.card {
+		flex: 1 1 33.33%;
+		min-height:360px;
+		padding: 0.5rem;
+		cursor: pointer;
+&__title {
+	margin-bottom: 1rem;
+	font-size: 2rem;
+}
+		&__item {
+			display: flex;
+			flex-direction: column;
+			border-left: 2px solid rgb(255, 2, 2);
+			border-top: 2px solid rgb(255, 2, 2);
+			border-right: 2px solid rgb(112, 2, 255);
+			border-bottom: 2px solid rgb(112, 2, 255);
+			box-shadow: 2px 5px 10px rgba(255, 2, 2, 0.2),
+				inset 2px 5px 10px rgba(2, 36, 255, 0.2);
+
+			padding: 1rem;
+			height: 100%;
+			text-align: center;
+			transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			&:hover {
+				box-shadow: 1px 1px 13px rgba(255, 2, 2, 0.5),
+					inset 1px 1px 13px rgba(2, 36, 255, 0.5);
+			}
+		}
+		&__image {
+			position: relative;
+			flex:1 1 100%;
+			margin-bottom: 2rem;
+			padding: 0 0 85% 0;
+			img {
+				position: absolute;
+				top:0;
+				left:0;
+				max-width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}

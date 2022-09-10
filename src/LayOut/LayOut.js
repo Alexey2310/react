@@ -1,18 +1,22 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 import { Header } from '../Components/Header/Header'
-const links =['Link1','Link2','Link3','Link4']
-const sublinks=['SubLink1','SubLink2','SubLink3']
+const links = [
+	{ name: 'Main', path: '/' },
+	{ name: 'About', path: '/about' },
+	{ name: 'Contacts', path: '/contacts' },
+	{name:'Catalog',path:'/catalog'}
+]
+const sublinks = ['SubLink1', 'SubLink2', 'SubLink3']
 export const LayOut = ({ children }) => {
-
 	return (
 		<>
-			 <Header links={links} sublinks={sublinks}/>
+			<Header links={links} sublinks={sublinks} />
 			<main>
 				<div className='container'>
-          <h1 className='main-title'>Main title</h1>
-          {children}
-          </div>
+					<Outlet />
+				</div>
 			</main>
 			<footer>Some footer</footer>
 		</>

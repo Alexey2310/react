@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../../assets/logo/logo.png'
 import { useMatchMedia } from '../../hooks/useMatchMedia'
 import { findAndAddClass } from '../../helperfunnction/helper'
+import {Link} from 'react-router-dom'
 import './Header.scss'
 export const Header = ({ links, sublinks }) => {
 	const { isMobile, isTablet, isDesctop } = useMatchMedia()
@@ -33,12 +34,12 @@ item.parentElement.classList.toggle('active')
 				<nav className='menu__body'>
 					<ul className={flexOrNotClasses.join(' ')}>
 						{links.map((link, index) => {
-							if (link === 'Link2') {
+							if (link.name === 'Catalog') {
 								return (
 									<li key={index}>
-										<a href='/' className='menu__link'>
-											{link}
-										</a>
+										<Link to={link.path} className='menu__link'>
+											{link.name}
+										</Link>
                     <span className="menu__arrow" onClick={addClass}></span>
 										<ul className='menu__list__sub'>
 											{sublinks.map((sublink, index) => (
@@ -54,9 +55,9 @@ item.parentElement.classList.toggle('active')
 							}
 							return (
 								<li key={index}>
-									<a href='/' className='menu__link'>
-										{link}
-									</a>
+									<Link to={link.path} className='menu__link'>
+										{link.name}
+									</Link>
 								</li>
 							)
 						})}
